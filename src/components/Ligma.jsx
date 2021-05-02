@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button } from 'semantic-ui-react';
+// import { Button, Card } from 'semantic-ui-react';
+import CardCollection from './CardCollection/CardCollection';
 
 function Ligma() {
   return (
     <div>
-      <Button>Poggers</Button>
-      I am a component without importing React!
+      <CardCollection />
     </div>
   );
 }
