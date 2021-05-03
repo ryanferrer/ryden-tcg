@@ -1,11 +1,11 @@
 import React from 'react';
 // import { Button, Card } from 'semantic-ui-react';
-import CardCollection from './CardCollection/CardCollection';
+import CardSearch from './CardSearch/CardSearch';
 
 function Ligma() {
   return (
     <div>
-      <CardCollection />
+      <CardSearch />
     </div>
   );
 }

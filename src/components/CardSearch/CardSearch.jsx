@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Form, Input } from 'semantic-ui-react';
 import CardList from './CardList';
 
-class CardCollection extends Component {
+class CardSearch extends Component {
   constructor(props) {
     super(props);
 
@@ -70,4 +70,4 @@ class CardCollection extends Component {
   }
 }
 
-export default CardCollection;
+export default CardSearch;
