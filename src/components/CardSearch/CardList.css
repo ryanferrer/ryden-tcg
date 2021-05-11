@@ -1,0 +1,10 @@
+.card-search {
+  height: 100vh;
+}
+
+.card-list {
+  max-height: 90%;
+  overflow: auto;
+  overflow-y: scroll;
+  padding: 12px;
+}

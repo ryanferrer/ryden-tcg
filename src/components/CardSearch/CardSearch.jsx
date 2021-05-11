@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Form, Input } from 'semantic-ui-react';
+import {
+  Container, Form, Input,
+} from 'semantic-ui-react';
 import CardList from './CardList';
 
 class CardSearch extends Component {
@@ -20,8 +22,6 @@ class CardSearch extends Component {
 
     this.setState({
       [e.target.name]: e.target.value,
-    }, () => {
-      console.log(this.state);
     });
   }
 
@@ -34,9 +34,10 @@ class CardSearch extends Component {
         console.log(response);
 
         this.setState({
+          searchTerm: '',
           searchResult: data,
         }, () => {
-          console.log(this.state);
+          console.log('setting cards in state', this.state);
         });
       });
   }
@@ -45,27 +46,36 @@ class CardSearch extends Component {
     // Layout:
     // - Search Bar to find ANY card
     // - List that contains cards added from Search Bar
-    const { searchResult } = this.state;
+    const { searchTerm, searchResult } = this.state;
+    const { handleClick } = this.props;
 
     return (
-      <div>
+      <Container
+        className="card-search"
+        fluid
+      >
 
         <Form
           onSubmit={this.search}
         >
           <Input
             name="searchTerm"
+            fluid
+            placeholder="Search for a card"
+            value={searchTerm}
             onChange={this.handleChange}
           />
         </Form>
 
+        {/* <Divider /> */}
+
         {
           searchResult
-            ? <CardList cards={searchResult} />
+            ? <CardList cards={searchResult} handleClick={handleClick} />
 
             : ''
         }
-      </div>
+      </Container>
     );
   }
 }

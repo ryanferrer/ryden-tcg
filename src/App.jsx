@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import Navigation from './components/Navigation';
-import Ligma from './components/Ligma';
+import Collection from './components/Collection';
+import './App.css';
 
 // App should be the 'Home Page'
 // Doesn't do much except to encompass the app with the Navigation and Footer
@@ -14,9 +15,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div id="App">
         {/* <Navigation /> */}
-        <Ligma />
+        <Collection />
       </div>
     );
   }
